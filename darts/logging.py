@@ -202,12 +202,7 @@ def execute_and_suppress_output(function, logger, suppression_threshold_level, *
     :param *args: Arguments passed to 'function'.
     :return: Outputs of 'function'.
     """
-    if logger.level >= suppression_threshold_level:
-        with SuppressStdoutStderr():
-            return_value = function(*args)
-    else:
-        return_value = function(*args)
-    return return_value
+    pass
 
 
 def suppress_lightning_warnings(suppress_all: bool = False):
