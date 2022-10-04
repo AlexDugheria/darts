@@ -28,7 +28,7 @@ def get_logger(name):
 
 def raise_deprecation_warning(
     message: str = "",
-    logger: logging.Logger = get_logger("main_logger"),
+    logger: logging.Logger = get_logger(__name__),
 ):
     """
     Raises a DeprecationWarning.
@@ -52,7 +52,7 @@ def raise_deprecation_warning(
 def raise_if_not(
     condition: bool,
     message: str = "",
-    logger: logging.Logger = get_logger("main_logger"),
+    logger: logging.Logger = get_logger(__name__),
 ):
     """
     Checks provided boolean condition and raises a ValueError if it evaluates to False.
@@ -81,7 +81,7 @@ def raise_if_not(
 def raise_if(
     condition: bool,
     message: str = "",
-    logger: logging.Logger = get_logger("main_logger"),
+    logger: logging.Logger = get_logger(__name__),
 ):
     """
     Checks provided boolean condition and raises a ValueError if it evaluates to True.
@@ -104,7 +104,7 @@ def raise_if(
     raise_if_not(not condition, message, logger)
 
 
-def raise_log(exception: Exception, logger: logging.Logger = get_logger("main_logger")):
+def raise_log(exception: Exception, logger: logging.Logger = get_logger(__name__)):
     """
     Can be used to replace "raise" when throwing an exception to ensure the logging
     of the exception. After logging it, the exception is raised.
@@ -129,7 +129,7 @@ def raise_log(exception: Exception, logger: logging.Logger = get_logger("main_lo
     raise exception
 
 
-def time_log(logger: logging.Logger = get_logger("main_logger")):
+def time_log(logger: logging.Logger = get_logger(__name__)):
     """
     A decorator function that logs the runtime of the function it is decorating
     to the logger object that is taken as an argument.
