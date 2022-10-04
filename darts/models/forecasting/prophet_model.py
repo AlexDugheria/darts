@@ -16,7 +16,7 @@ from darts.models.forecasting.forecasting_model import DualCovariatesForecasting
 from darts.timeseries import TimeSeries
 
 logger = get_logger(__name__)
-logger.level = logging.WARNING  # set to warning to suppress prophet logs
+# logger.level = logging.WARNING  # set to warning to suppress prophet logs
 
 
 class Prophet(DualCovariatesForecastingModel):
